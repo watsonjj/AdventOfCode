@@ -1,0 +1,10 @@
+default:
+  just --list
+
+# Use `just work day-01 part1` to work on the specific binary for a specific day's problems
+run day part:
+    cargo run -p day{{day}} --bin part{{part}}
+
+# Run the test suite
+test:
+    cargo test
