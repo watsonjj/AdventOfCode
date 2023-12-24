@@ -5,3 +5,5 @@ members = ["day*"]
 default-members = ["day*"]
 
 [workspace.dependencies]
+regex = "1.10.2"
+once_cell = "1.19.0"

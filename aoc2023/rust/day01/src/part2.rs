@@ -25,4 +25,11 @@ zoneight234
         let expected: u32 = 281;
         assert_eq!(process(input), expected);
     }
+
+    #[test]
+    fn test_process_merged() {
+        let input = "oneight";
+        let expected: u32 = 18;
+        assert_eq!(process(input), expected);
+    }
 }
