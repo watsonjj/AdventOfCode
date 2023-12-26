@@ -97,7 +97,7 @@ pub fn parse<'a>(
 
 /// Process the problem for this day and stage.
 pub fn process(input: &str) -> u32 {
-    parse(input).map(|r| if r.is_valid() {r.game_id} else {0}).sum()
+    parse(input).filter(|r| r.is_valid()).map(|r| r.game_id).sum()
 }
 
 #[cfg(test)]
