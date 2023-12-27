@@ -1,10 +1,14 @@
 default:
   just --list
 
-# Use `just work day-01 part1` to work on the specific binary for a specific day's problems
+# Run the binary for a specific day's problems
 run day part:
     cargo run -p day{{day}} --bin part{{part}}
 
 # Run the test suite
-test:
-    cargo test
+test day="":
+    cargo nextest run {{ if day != "" { "-p day"+day } else { "" } }}
+
+# Create the crate for a day
+create day:
+    cargo generate --path ./template --name day{{day}}
