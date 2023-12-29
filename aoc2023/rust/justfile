@@ -6,8 +6,8 @@ run day part:
     cargo run -p day{{day}} --bin part{{part}}
 
 # Run the test suite
-test day="":
-    cargo nextest run {{ if day != "" { "-p day"+day } else { "" } }}
+test day="" part="":
+    cargo nextest run {{ if day != "" { "-p day"+day } else { "" } }} {{part}}
 
 # Create the crate for a day
 create day:
